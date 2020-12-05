@@ -13,7 +13,7 @@
     }
 
     /*
-    *  Initializes / resets game by assigning variables
+    *  Resets game
     */
     if (isset($_POST["submit"])) {
         $prevEntries = array();
