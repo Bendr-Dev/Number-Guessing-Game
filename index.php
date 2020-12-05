@@ -15,7 +15,7 @@
     /*
     *  Initializes / resets game by assigning variables
     */
-    if (isset($_POST["restart"])) {
+    if (isset($_POST["submit"])) {
         $prevEntries = array();
         $numEntriesLeft = 10;
         $secretCode = generateRandomValues();
