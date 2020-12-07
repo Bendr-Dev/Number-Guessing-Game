@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap");
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #222, #111);
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  height: 100%;
+  width: 800px;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form {
+  display: none;
+}
+
+/* Code pad */
+.code-pad {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  border: 3px solid #000;
+  background-color: #2f4f4f;
+  box-shadow: 4px 6px 20px #000;
+  align-content: center;
+}
+
+.code-pad .border {
+  border: 3px solid #000;
+  margin: 1.5rem;
+}
+
+.code-pad #value-display {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  max-width: 400px;
+  height: 100px;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ffff00;
+  font-family: "Orbitron", sans-serif;
+  font-size: 32px;
+  background-color: #222;
+  border: 9px inset #555;
+  text-shadow: 0px 0px 5px #ffff00;
+}
+
+.code-pad #num-pad {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-rows: 50px 50px 50px 50px;
+  grid-template-columns: 50px 50px 50px;
+  gap: 8px;
+  align-self: center;
+  align-items: center;
+  padding: 0.5rem;
+  border: 2px solid #000;
+  background-color: #233b3b;
+}
+
+.code-pad #num-pad div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: "Orbitron", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  background-color: #365c5c;
+  border: 3px outset #222;
+  color: #050909;
+}
+
+.code-pad #num-pad div:hover {
+  cursor: pointer;
+  border: 3px inset #222;
+  background-color: #2f4f4f;
+}
+
+/* Entries */
+.entries {
+  width: 300px;
+  height: 500px;
+  border-radius: 5px;
+  background-color: #222;
+  border: 3px solid #000;
+}
