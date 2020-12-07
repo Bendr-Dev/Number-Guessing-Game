@@ -10,7 +10,6 @@ const codeValue3Display = document.getElementById("v3-display");
 const codeValue4Display = document.getElementById("v4-display");
 
 const numPad = document.getElementById("num-pad");
-const entries = document.getElementById("entries");
 
 const codeFormBtn = document.getElementById("submit-btn");
 
@@ -19,7 +18,6 @@ const codeValues = {
     "values": [codeValue1Display, codeValue2Display, 
                codeValue3Display, codeValue4Display]
 };
-
 
 /**
  * Adds event listeners to numpad buttons
