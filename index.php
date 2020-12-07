@@ -31,7 +31,6 @@
         $userCode = array(intval($_POST["value1"]), intval($_POST["value2"]),  intval($_POST["value3"]),  intval($_POST["value4"]));
         --$_SESSION["numEntriesLeft"];
         $codeResult = array("code"=>$userCode, "entriesLeft"=>$_SESSION["numEntriesLeft"], "green"=>array(), "yellow"=>array(), "red"=> array());
-        $secondLoopCode = $userCode;
         
         // Counts for duplicate numbers
         $secretCodeCount = array_count_values($_SESSION["secretCode"]);
