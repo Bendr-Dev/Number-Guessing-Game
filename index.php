@@ -23,7 +23,6 @@
         return array(rand(0,9), rand(0,9), rand(0,9), rand(0,9));
     }
 
-    echo json_encode($_SESSION["secretCode"]);
     /*
     *  Determine if code sent from user matches randomly generated code
     */
