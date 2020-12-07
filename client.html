@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guessing Game</title>
-    <script type="text/javascript" src="script.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form method="POST" action="">
-        <input type="number" min="0" max="9" name="value1" id="value1" />
-        <input type="number" min="0" max="9" name="value2" id="value2" />
-        <input type="number" min="0" max="9" name="value3" id="value3" />
-        <input type="number" min="0" max="9" name="value4" id="value4" />
-        <input type="submit" name="submit" id="go" value="Go" />
-    </form>
+    <main>
+        <form method="POST" action="" id="code-form">
+            <input type="number" min="0" max="9" name="value1" id="value1" />
+            <input type="number" min="0" max="9" name="value2" id="value2" />
+            <input type="number" min="0" max="9" name="value3" id="value3" />
+            <input type="number" min="0" max="9" name="value4" id="value4" />
+            <input type="submit" name="submit" id="submit-btn" value="Go" />
+        </form>
+        <div class="code-pad">
+            <div class="border">
+                <div id="value-display">
+                    <div id="v1-display">_</div>
+                    <div id="v2-display">_</div>
+                    <div id="v3-display">_</div>
+                    <div id="v4-display">_</div>
+                </div>
+            </div>
+            <div id="num-pad">
+                <div> 1 </div>
+                <div> 2 </div>
+                <div> 3 </div>
+                <div> 4 </div>
+                <div> 5 </div>
+                <div> 6 </div>
+                <div> 7 </div>
+                <div> 8 </div>
+                <div> 9 </div>
+                <div> x </div>
+                <div> 0 </div>
+                <div> > </div>
+            </div>
+        </div>
+        <div class="entries" id="entries">
+
+        </div>
+    </main>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
