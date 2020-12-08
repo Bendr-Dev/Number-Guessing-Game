@@ -57,15 +57,17 @@
                 }
             }
         }
-        array_push($_SESSION["prevEntries"], $codeResult); // Attaches the results to object
-    }
 
-    /**
-    *  Returns data encoded in JSON format
-    */
-    function returnJsonResponse( $data ) {
-        // return PHP object as JSON
-        echo json_encode( $data );
+        if(count($codeResult["green"]) === 4) {
+            phpAlert("You guessed the right code combination!");
+            destroySession();
+        } elseif (count($codeResult["green"]) !== 4 && $_SESSION["numEntriesLeft"] === 0) {
+            $secretCodeRevealed = json_encode($_SESSION["secretCode"]);
+            phpAlert("You ran out of attempts! The code was: {$secretCodeRevealed}");
+            destroySession();
+        }
+
+        array_push($_SESSION["prevEntries"], $codeResult); // Attaches the results to object
     }
 
     /**
@@ -74,9 +76,26 @@
     function isSessionActive() {
         return (session_status() === PHP_SESSION_ACTIVE);
     }
+
+    /**
+     * Destroys session
+     */
+    function destroySession() {
+        if (isSessionActive()) {
+            session_destroy();
+            exit();
+        }
+    }
+
+    /**
+     * Creates an alert
+     */
+    function phpAlert($msg) {
+        echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+    }
 ?>
 
-<script>
+<script type="text/javascript">
     const prevResults = <?php echo json_encode($_SESSION["prevEntries"], JSON_HEX_TAG); ?>;
     const entriesLeft = <?php echo json_encode($_SESSION["numEntriesLeft"], JSON_HEX_TAG); ?>;
     const entries = document.getElementById("entries");

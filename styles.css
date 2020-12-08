@@ -27,8 +27,26 @@ main {
   justify-content: space-between;
 }
 
-form {
+#code-form {
   display: none;
+}
+
+input[name="restart"] {
+  width: 300px;
+  height: 50px;
+  margin-top: 0.5rem;
+  border: 3px solid #000;
+  border-radius: 5px;
+  background-color: #ff5555;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  box-shadow: 5px 5px 20px #000;
+}
+
+input[name="restart"]:hover {
+  cursor: pointer;
+  background-color: #ff4444;
+  box-shadow: none;
 }
 
 /* Code pad */
@@ -103,7 +121,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 500px;
+  height: 425px;
   border-radius: 5px;
   background-color: #222;
   border: 3px solid #000;
@@ -115,7 +133,8 @@ form {
 
 .entries > div:first-of-type {
   font-size: 24px;
-  text-decoration: underline;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 

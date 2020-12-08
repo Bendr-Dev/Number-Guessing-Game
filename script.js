@@ -86,4 +86,4 @@ const addValuesToForm = () => {
  */
 const submitValues = () => {
     codeFormBtn.click();
-}
+};
