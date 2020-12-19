@@ -8,7 +8,17 @@
     if (!isset($_SESSION["secretCode"])) {
         $_SESSION["prevEntries"] = array();
         $_SESSION["numEntriesLeft"] = 10;
+        $_SESSION["isSolved"] = false;
         $_SESSION["secretCode"] = generateRandomValues();
+    }
+
+    if ($_SESSION["isSolved"]) {
+        phpAlert("You got the right code combination! Press restart to start a new game.");
+        destroySession();
+    } elseif (!$_SESSION["isSolved"] and $_SESSION["numEntriesLeft"] === 0) {
+        $secretCodeRevealed = json_encode($_SESSION["secretCode"]);
+        phpAlert("You ran out of attempts! The code was: {$secretCodeRevealed}. Press restart to start a new game");
+        destroySession();
     }
 
     /**
@@ -19,10 +29,27 @@
     }
 
     /**
+     * Destroys session
+     */
+    function destroySession() {
+        if (isSessionActive()) {
+            session_destroy();
+            exit();
+        }
+    }
+
+    /**
      *  Checks session status
      */
     function isSessionActive() {
         return (session_status() === PHP_SESSION_ACTIVE);
+    }
+
+    /**
+     * Creates an alert
+     */
+    function phpAlert($msg) {
+        echo '<script type="text/javascript">alert("' . $msg . '")</script>';
     }
 ?>
 
