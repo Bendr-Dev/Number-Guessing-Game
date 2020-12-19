@@ -45,12 +45,7 @@
         }
 
         if(count($codeResult["green"]) === 4) {
-            phpAlert("You guessed the right code combination!");
-            destroySession();
-        } elseif (count($codeResult["green"]) !== 4 && $_SESSION["numEntriesLeft"] === 0) {
-            $secretCodeRevealed = json_encode($_SESSION["secretCode"]);
-            phpAlert("You ran out of attempts! The code was: {$secretCodeRevealed}");
-            destroySession();
+            $_SESSION["isSolved"] = true;
         }
 
         array_push($_SESSION["prevEntries"], $codeResult); // Attaches the results to object
@@ -80,12 +75,5 @@
             session_destroy();
             redirect();
         }
-    }
-
-    /**
-     * Creates an alert
-     */
-    function phpAlert($msg) {
-        echo '<script type="text/javascript">alert("' . $msg . '")</script>';
     }
 ?>
