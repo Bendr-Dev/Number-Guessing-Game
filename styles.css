@@ -10,8 +10,8 @@
 body {
   margin: 0px;
   width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(to bottom right, #222, #111);
+  height: fit-content;
+  background-color: #222;
 }
 
 main {
@@ -29,12 +29,6 @@ main {
 
 /* Responsive for smaller devices */ 
 @media (max-width: 799px) {
-  body {
-    margin: 0px;
-    width: 100%;
-    background-image: linear-gradient(to bottom right, #222, #111);
-  }
-
   main {
     display: flex;
     flex-direction: column;
