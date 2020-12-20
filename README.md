@@ -8,6 +8,7 @@ A number guessing game. The player has ten total attempts to guess a randomized 
 
 - Make sure you have a PHP interpreter such as XAMPP installed on your machine
   #### If you dont:
+  - Install PHP interpreter (example: XAMPP)
   - Locate where your PHP interpreter is (example: C:\xampp\php)
   - Add directory to system variables under 'Path'
 
